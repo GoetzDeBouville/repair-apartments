@@ -1,3 +1,5 @@
+*
+	box-sizing: border-box	//"Золотое правило", необходимо включать в каждый код сайта для использования корректных отступов
 body
 	+reg
 img
@@ -17,3 +19,20 @@ img
 	border-radius: 10px
 	background-color: $main-color
 	padding: 18px 30px
+	transition: 0.2s //Время изменения состояния по hover
+		// Псевдоклассы
+	&:hover
+		background-color: lighten($main-color, 10%)
+		cursor: pointer
+	&:focus
+		outline: none
+	&:active
+		background-color: #ff6600
+.section
+	padding: 90px 0
+	&-title
+		font-size: 24px
+		+bold
+	&-subtitle
+		font-size: 16px
+		display: block
