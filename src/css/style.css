@@ -139,6 +139,20 @@ img {
   font-weight: 700;
 }
 
+.navbar__phone::after {
+  content: '';
+  display: block;
+  height: 1px;
+  background-color: #000;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  width: 0%;
+}
+
+.navbar__phone:hover::after {
+  width: 100%;
+}
+
 @media (max-width: 768px) {
   .navbar__contacts {
     display: none;

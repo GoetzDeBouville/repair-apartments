@@ -20,17 +20,16 @@
 		margin-top: 10px
 		text-decoration: none
 		+bold
-		// Псевдоэлемент
-			// &::after
-			// 	content: ''
-			// 	display: block
-			// 	height: 1px
-			// 	background-color: #001e6b
-			// 	transition: 0.2s
-			// 	width: 100%
-			// &:hover //Внутрь псевдокласса вставляем подготовленный псевдоэлемент с конечным состоянием
-			// 	&::after
-			// 		width: 100%
+		&::after
+			content: ''
+			display: block
+			height: 1px
+			background-color: #000
+			transition: 0.2s
+			width: 0%
+		&:hover
+			&::after
+				width: 100%
 @media ( max-width:  768px)
 	.navbar
 		&__contacts
