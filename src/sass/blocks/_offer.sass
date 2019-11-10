@@ -1,11 +1,69 @@
 .offer
+	background: url('../img/offer/offer-bg.png') no-repeat//no-repeat - не дублировать изображение
+	background-size: contain
+	background-position: center right
+	position: relative
+	&::before //псевдоэлемент с параметром content
+		content: ''
+		width: 50%
+		height: 100%
+		position: absolute //для подсчета абсолютной ширины и высоты относительно родительского элемента offer где указан position relative
+		top: 0 //"приклеивание" элемента к верхнему левому углу
+		left: 0
+		background-color: #fff
 	&-block
 		width: 50%
 		padding-right: 90px
+		position: relative //выводит содержимое блока на передний план
+		mt
+	&-text
+		display: flex
+		align-items: center
+		top: 0
+		left: 0
+		margin-top: 15px
+		width: 100%
+		&:first-child
+			margin-right: 10px
+	&__phone
+		display: inline
 	&__title
 		max-width: 360px
 		line-height: 35px
 		margin-bottom: 24px
 	&__subtitle
-		max-width: 200px
+		max-width: 250px
 		margin-bottom: 30px
+	&__input
+		margin-bottom: 30px
+		width: 240px
+		&:first-child
+			margin-right: 10px
+	&__button
+		width: 100%
+		height: 70px
+		+bold
+@media ( max-width:  1200px)
+	.offer
+		background-size: cover //заполняет только отведенное пространство
+		&__input
+			width: 100%
+			margin-bottom: 10px
+		&__button
+			font-size: 13px
+		&-text
+			display: inline
+		navbar__phone
+			display: block
+@media ( max-width:  768px)
+	.offer
+		background: #fff
+		&-block
+			width: 100%
+			padding-right: 0
+		&-text
+			display: block
+		&-nested
+			display: block
+		navbar__phone
+			display: block
