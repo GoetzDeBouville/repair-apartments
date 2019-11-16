@@ -7,6 +7,42 @@ button.addEventListener('click', function () {//добавление отсле�
 	modal.classList.add('modal_active'); //добавляем класс
 });
 
+
 close.addEventListener('click', function(){
 	modal.classList.remove('modal_active') //выполнения функции закрытия окна
 });
+
+// setTimeout(function () {
+// 	modal.classList.remove('modal_active')
+// }, 1);
+
+
+
+////////////////////////////////////////////////////////////////////////////
+// $(document) //обращение ко всему пакету
+
+// $(document).ready(function(){ // вызов элемента по id только после полной загрузки страницы
+// 	$('#id')
+// });
+
+// $(function (){ // полностью эквивалентно предыдущей записи
+// 	$('#id')
+// });
+
+// $(document).ready(function () { // вызов элемента по id только после полной загрузки страницы
+// 	$('.navbar__contacts').css('border','solid 3px red');
+//  });
+
+// $(document).ready(function(){
+// 	// //$('.navbar__phone').click(function(){
+// 	// // (this).toggleClass('blue')
+// 	// // })
+// 	// $('.navbar__phone').mouseenter(function(){
+// 	// 	$(this).toggleClass('red')
+// 	// })
+// 	// $('.navbar__phone').mouseleave(function (){
+// 	// 	$(this).toggleClass('red')
+// 	// })
+
+
+// });
