@@ -41,3 +41,11 @@ img
 	padding: 20px 26px
 	font-style: 15px
 	border-radius: 10px
+	&::after
+		content: ''
+		border: 5px solid #ff6600
+		transition: 0.2s
+		border: 1px solid $border-input
+		&::hover
+			&::after
+				width: 100%
