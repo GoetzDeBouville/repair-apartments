@@ -2,6 +2,10 @@
 	box-sizing: border-box	//"Золотое правило", необходимо включать в каждый код сайта для использования корректных отступов
 body
 	+reg
+
+.button-top
+	width: 50px
+
 img
 	min-width: 100% //Всегда должно быть прописано, чтобы при изменении ширины экрана верстка не рушилась
 .container 
@@ -33,6 +37,7 @@ img
 	&-title
 		font-size: 24px
 		+bold
+		text-align: center
 	&-subtitle
 		font-size: 16px
 		display: block
@@ -49,3 +54,9 @@ img
 		&::hover
 			&::after
 				width: 100%
+
+.arrows
+	&__left, &__right
+		&:hover
+			cursor: pointer
+

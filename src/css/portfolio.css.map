@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AACE,AAAD,iBAAQ,CAAC;EACR,SAAS,EAAE,KAAK;CAAG",
+    "sources": [
+        "../sass/blocks/portfolio.sass"
+    ],
+    "names": [],
+    "file": "portfolio.css"
+}
