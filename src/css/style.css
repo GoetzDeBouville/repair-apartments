@@ -110,6 +110,10 @@ img {
   cursor: pointer;
 }
 
+.slider {
+  cursor: pointer;
+}
+
 .navbar {
   padding: 8px 0;
 }
