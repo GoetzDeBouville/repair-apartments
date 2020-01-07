@@ -270,9 +270,10 @@
                         <h3 class="form__title">Оставьте заявку на бесплатный расчет ремонта по телефону</h3>
                         <!-- /.form__title -->
                         <span class="form__subtitle">Для этого заполните форму ниже</span>
-                        <form action="#">
-                            <input type="text" name="name" class="input brif__input wow flipInX" data-wow-delay="1s" placeholder="Ваше имя">
-                            <input type="tel" name="phone" class="input brif__input wow flipInX" data-wow-delay="1s" placeholder="Ваш телефон">
+                        <form action="#" id="brif-form">
+                            <input type="text" name="username" class="input brif__input wow flipInX" data-wow-delay="1s" placeholder="Ваше имя">
+                            <input type="tel" name="phone" class="input brif__input wow flipInX phone" data-wow-delay="1s" placeholder="Ваш телефон">
+                            <input type="email" name="email" class="input brif__input wow flipInX" data-wow-delay="1s" placeholder="Ваш email">
                             <button class="button brif__button wow flipInX" data-wow-delay="1s">Узнать стоимость</button>
                             <span class="form__description">Мы перезвоним Вам в течение 60 секунд</span>
                         </form>
@@ -285,6 +286,59 @@
         </section>
         <!-- /.section brif -->
     </main>
+
+    <footer class="footer">
+        <div class="map wow fadeInLeftBig" data-wow-delay="0.1s" id = "map">
+            <!-- <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2253.456048304222!2d37.19909795185105!3d55.61147998042018!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b556d92c52e921%3A0x7069f1a444f51ab2!2z0YPQuy4g0JvQtdC90LjQvdCwLCAxMCwg0KLQvtC70YHRgtC-0L_QsNC70YzRhtC10LLQviwg0JzQvtGB0LrQstCwLCAxNDMzNTA!5e0!3m2!1sru!2sru!4v1578406078275!5m2!1sru!2sru"
+                width="100%" height="640" frameborder="0" style="border:0;" allowfullscreen=""></iframe> -->
+            <script type="text/javascript" charset="utf-8" async
+                src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A89091bf25eb554d6690ea4cb240e6a9eac0494cb14c7de96634b969d12bae68c&amp;width=100%25&amp;height=640&amp;lang=ru_RU&amp;scroll=false"></script>
+        </div>
+        <div class="container wow fadeInRightBig" data-wow-delay="0.1s">
+            <div class="contacts-block">
+                <div class="contacts">
+                    <h3 class="contacts__title">Приезжайте к нам в гости! Проконсультируем Вас по всем вопросам ремонта</h3>
+                    <ul class="contacts-list">
+                        <li class="contacts-list__item">
+                            <span class="contacts-list__icon">
+                                <img src="img/footer/point.png" alt="">
+                            </span> 
+                            <!-- /.contacts-list__icon -->
+                            <span class="contacts-list__text">г. Москва <br> ул. Ленина, д. 10, корпус 2, оф. 308
+                            </span> 
+                            <!-- /.contacts-list__text -->
+                        </li>
+                        <!-- /.contacts-list__item -->
+                        <li class="contacts-list__item">
+                            <span class="contacts-list__icon">
+                                <img src="img/footer/clock.png" alt="">
+                            </span> 
+                            <!-- /.contacts-list__icon -->
+                            <span class="contacts-list__text">Режим работы: <br> с 9:00 до 18:00</span> 
+                            <!-- /.contacts-list__text -->
+                        </li>
+                        <!-- /.contacts-list__item -->
+                        <li class="contacts-list__item">
+                            <span class="contacts-list__icon">
+                                <img src="img/footer/phone.png" alt="">
+                            </span> 
+                            <!-- /.contacts-list__icon -->
+                            <span class="contacts-list__text">Телефон: <br>
+                                <a href="tel:+7(495)42-251-31">+7(495)42-251-31</a></span> 
+                            <!-- /.contacts-list__text -->
+                        </li>
+                        <!-- /.contacts-list__item -->
+                    </ul>
+                    <!-- /.contacts-list -->
+                </div>
+                <!-- /.contacts-title -->
+                <!-- /.contacts -->
+            </div>
+            <!-- /.contacts-block -->
+        </div>
+    </footer>
+
     <div class="modal" id="modal">
         <div class="modal-dialog">
             <button class="modal-dialog__close" id="close">&times;</button>
@@ -299,11 +353,40 @@
     <script src="js/modal.js"></script>
     <script src="js/slick.min.js"></script>
     <script src="js/wow.min.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/jquery.maskedinput.min.js"></script>
     <script>
         new WOW().init(); //инициализация wow.js анимации
 
-        /*Скрипт слайда для .portfolio*/
+        
         $(document).ready(function(){
+            /*Валидация формы*/
+            $('#brif-form').validate({ //обращение к идентификатору brif-form и включение плагина validate
+                rules:{
+                    username: {
+                      required: true,
+                      minlegth: 3  
+                    },
+                    email:{
+                        required: true,
+                        email: true
+                    }
+                },
+                messages: {
+                username: {
+                    required: "Введите Ваше имя",
+                    minlength: jQuery.validator.format("Имя должно состоять из не менее {2} букв")
+                },
+                    email: "Введите Ваш e-mail"
+                },
+                    phone: {
+                        required: "Укажите телефон"
+                },
+            });
+            //Маска для  телефона
+            $('.phone').mask('+7 (999) 999-99-99');
+            
+            /*Скрипт слайда для .portfolio*/
             $('.slider').slick({
                 slidesToShow: 3,
                 slidesToScroll: 1,
