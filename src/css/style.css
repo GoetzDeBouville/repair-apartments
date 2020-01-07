@@ -784,4 +784,33 @@ img {
           align-items: flex-start;
   margin-bottom: 39px;
 }
+
+@media (max-width: 768px) {
+  .footer {
+    display: block;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  .footer .map {
+    display: block;
+    width: 100%;
+  }
+  .footer .contacts {
+    display: block;
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+    padding-top: 0px;
+    padding-left: 10px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .contacts {
+    -ms-flex-preferred-size: 50%;
+        flex-basis: 50%;
+    padding-top: 100px;
+    padding-left: 50px;
+  }
+}
 /*# sourceMappingURL=style.css.map */
